@@ -7,7 +7,10 @@ use App\Player;
 
 class PlayersController extends Controller
 {
-   
+    public function __construct()
+    {
+        $this->middleware('auth');  // dodat middleware
+    }
     /**
      * Display a listing of the resource.
      *
