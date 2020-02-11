@@ -7,6 +7,7 @@ use App\Player;
 
 class PlayersController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *

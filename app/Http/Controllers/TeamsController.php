@@ -7,6 +7,7 @@ use App\Team;
 
 class TeamsController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *

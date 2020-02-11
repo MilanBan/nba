@@ -70,4 +70,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function store(){
+        $this->validator(request());
+        $user = $this->create(request());
+        $user->save();
+        auth()->login($user);
+        return redirect('/');
+    }
 }

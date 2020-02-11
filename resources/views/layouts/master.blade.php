@@ -16,6 +16,19 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Teams <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-item nav-link" href="/register">Register</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-item nav-link" href="/login">Login</a>
+      </li>
+      @if(Auth::check())<!--ako user postoji i autentikovan je -->
+        <div class="nav-item nav-link">{{ auth()->user()->name}}</div><!--prikazi njegovo ime i logout link -->
+        <a class="nav-item nav-link" href="/logout">Logout</a>
+        <form action="/logout" method="POST">
+        @csrf
+          <button class="btn btn-danger" type="submit" >Logout</button>              </form>
+      @endif
     </ul>
     </nav>
 
